@@ -5,10 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "node ./src/build.js",
+    "build": "node ./src/build.js && cpy public dist",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./*.test.js",
-    "lint": "stylelint styles.css ./**/*.css",
     "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom=\"./src/**/*.js\"",
+    "dev": "browser-sync start --serveStatic ./dist --server --files ./public/styles.css ./dist/*.html",
+    "prettier": "prettier --write .",
+    "lint": "concurrently npm:lint:*",
+    "lint:eslint": "eslint ./src/**/*.js",
     "lint:stylelint": "stylelint ./public/styles.css"
   },
   "repository": {
@@ -35,7 +38,6 @@
     "stylelint-config-standard": "^29.0.0"
   },
   "dependencies": {
-    "browser-sync": "^2.27.11",
-    "csv-parse": "^5.3.4"
+    "browser-sync": "^2.27.11"
   }
 }

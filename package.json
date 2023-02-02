@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "node ./src/build.js",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./*.test.js",
+    "build": "node ./src/build.js && cpy public dist",
     "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom=\"./src/**/*.js\"",
     "dev": "browser-sync start --serveStatic ./dist --server --files ./public/styles.css ./dist/*.html",
     "prettier": "prettier --write .",
@@ -38,6 +37,7 @@
     "stylelint-config-standard": "^29.0.0"
   },
   "dependencies": {
-    "browser-sync": "^2.27.11"
+    "browser-sync": "^2.27.11",
+    "cpy-cli": "^4.2.0"
   }
 }

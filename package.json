@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node ./src/build.js",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./*.test.js",
-    "lint": "stylelint styles.scss ./**/*.scss",
+    "lint": "stylelint styles.css ./**/*.css",
     "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom=\"./src/**/*.js\""
   },
   "repository": {

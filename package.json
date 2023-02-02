@@ -8,7 +8,8 @@
     "build": "node ./src/build.js",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./*.test.js",
     "lint": "stylelint styles.css ./**/*.css",
-    "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom=\"./src/**/*.js\""
+    "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom=\"./src/**/*.js\"",
+    "lint:stylelint": "stylelint ./public/styles.css"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "stylelint-config-standard": "^29.0.0"
   },
   "dependencies": {
+    "browser-sync": "^2.27.11",
     "csv-parse": "^5.3.4"
   }
 }

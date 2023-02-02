@@ -1,7 +1,9 @@
 import { mkdir, writeFile } from 'fs/promises';
 import { direxists, readFile } from './lib/make-file.js';
 import { join } from 'path';
-import { indexTemplate, newPageTemplate} from './lib/make-html.js';
+import { indexTemplate, newPageTemplate } from './lib/make-html.js';
+import { parseCSV } from './lib/parser.js';
+
 
 
 const DATA_DIR = './data';
@@ -41,6 +43,8 @@ async function main() {
   const path = join(DIST_DIR, 'index.html');
   const template = indexTemplate(results);
   await writeFile(path, template, {flag: 'w+'});
+
 }
+
 
 main().catch((err) => console.error(err));

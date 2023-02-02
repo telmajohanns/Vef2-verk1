@@ -11,18 +11,19 @@ function template(title, content) {
 }
 
 function newPage(result) {
-  return `<article>
+  return `
+  <article>
   <h2> ${result.title}</h2>
   <p>${result.description}</p>
-  <p><a href="/">Til baka</a></p>
+  <button><a class="button-content" href="/">Til baka</a></button>
 </article>`;
 }
 
 function index(results) {
   const list = results?.map(
       (result) => `
-<li>
-  <a href="${result.filename}">${result.title}</a>
+<li class="list-of-content">
+  <a class="content" href="${result.filename}">${result.title}</a>
 </li>`
     )
     .join('\n');

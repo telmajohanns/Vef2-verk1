@@ -1,7 +1,12 @@
-export function parse(input) {
-  const fs = require('fs');
+export function parseCSV(input) {
 
-  fs.readFile('./data/islenska.csv', 'latin1', function (err, data) {
-    console.log(data);
+  let parsedData = []
+
+  if(input != null) {
+    parsedData = input.split("\n").map(function (line) {
+      return line.split(";");
   });
+
+  }
+  return parsedData;
 }
